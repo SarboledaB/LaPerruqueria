@@ -1,41 +1,34 @@
-.comments-container {
-  padding: 0 1rem;
+.pet-tips-container {
+  padding: 1rem;
 
-  .comments-grid {
+  .pet-tips-grid {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    grid-auto-rows: min-content;
   }
 
-  .comment-card {
+  .pet-tip-card {
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &:hover {
       transform: translateY(-5px);
     }
   }
 
-  .comment-author {
+  .pet-tip-title {
     font-size: 1.2rem;
     font-weight: bold;
   }
 
-  .comment-stars {
-    display: flex;
-    gap: 0.25rem;
-    color: #ff5757;
-  }
-
-  .comment-text {
+  .pet-tip-text {
     margin-top: 0.5rem;
     color: #555;
   }

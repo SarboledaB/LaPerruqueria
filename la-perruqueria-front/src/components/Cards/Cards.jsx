@@ -9,7 +9,7 @@ const Cards = () => {
   const cardsData = [
     {
       image: 'https://petpix.co/wp-content/uploads/2020/05/Zeus-Suberiano0038-300x300.jpg',
-      title: 'SPA',
+      title: 'SPA Y MIMOS',
       url: '/spa-de-mascotas'
     },
     {

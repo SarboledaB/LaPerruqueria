@@ -18,7 +18,7 @@ const Album = () => {
 
   return (
     <div>
-      <HeaderDivider title={'Album de Clientes'} />
+      <HeaderDivider title={'Modelos con Patas y Mucho Estilo '} />
       {<ImageCarousel images={images} />}
     </div>
   );

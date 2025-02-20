@@ -1,0 +1,32 @@
+.food-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pet-store-food {
+  background-color: #fff3e0;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+
+  .pet-food-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff7043;
+    text-shadow: 2px 2px 0px #ffab91;
+    margin-bottom: 10px;
+  }
+
+  .pet-food-description {
+    font-size: 16px;
+    color: #5d4037;
+    line-height: 1.6;
+
+    strong {
+      color: #bf360c;
+    }
+  }
+}

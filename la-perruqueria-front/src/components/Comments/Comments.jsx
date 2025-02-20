@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { PawPrint } from "lucide-react";
 import HeaderDivider from "../HeaderDivider/HeaderDivider.jsx";
 import "./Comments.scss";
 
@@ -14,14 +14,14 @@ const comments = [
 const Comments = () => {
   return (
     <div className="comments-container">
-      <HeaderDivider title="Comentarios" />
+      <HeaderDivider title="Testimonios con Huellitas " />
       <div className="comments-grid">
         {comments.map((comment) => (
           <div key={comment.id} className="comment-card">
             <h3 className="comment-author">{comment.name}</h3>
             <div className="comment-stars">
               {[...Array(5)].map((_, index) => (
-                <Star key={index} size={16} fill={index < comment.rating ? "#FACC15" : "none"} />
+                <PawPrint key={index} size={16} fill={index < comment.rating ? "#ff5757" : "none"} />
               ))}
             </div>
             <p className="comment-text">{comment.text}</p>
