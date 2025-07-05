@@ -3,8 +3,8 @@ const {
   fetchCommentDetails,
   createComment,
   updateComment,
-  deleteComment
-} = require("../../services/clientsCommentsService");
+  deleteComment,
+} = require('../../services/clientsCommentsService');
 
 // Obtener todos los comentarios
 async function getCommentsController(req, res, next) {
@@ -21,7 +21,7 @@ async function getCommentByIdController(req, res, next) {
   try {
     const comment = await fetchCommentDetails(req.params.id);
     if (!comment) {
-      return res.status(404).json({ message: "Comentario no encontrado" });
+      return res.status(404).json({ message: 'Comentario no encontrado' });
     }
     res.json(comment);
   } catch (error) {
@@ -44,7 +44,7 @@ async function updateCommentController(req, res, next) {
   try {
     const updatedComment = await updateComment(req.params.id, req.body);
     if (!updatedComment) {
-      return res.status(404).json({ message: "Comentario no encontrado" });
+      return res.status(404).json({ message: 'Comentario no encontrado' });
     }
     res.json(updatedComment);
   } catch (error) {
@@ -57,7 +57,7 @@ async function deleteCommentController(req, res, next) {
   try {
     const deletedComment = await deleteComment(req.params.id);
     if (!deletedComment) {
-      return res.status(404).json({ message: "Comentario no encontrado" });
+      return res.status(404).json({ message: 'Comentario no encontrado' });
     }
     res.json(deletedComment);
   } catch (error) {
@@ -69,5 +69,5 @@ module.exports = {
   getCommentByIdController,
   createCommentController,
   updateCommentController,
-  deleteCommentController
+  deleteCommentController,
 };

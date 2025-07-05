@@ -1,10 +1,10 @@
 const express = require('express');
 const {
-    getProductsController,
-    getProductByIdController,
-    createProductController,
-    updateProductController,
-    deleteProductController,
+  getProductsController,
+  getProductByIdController,
+  createProductController,
+  updateProductController,
+  deleteProductController,
 } = require('../controllers/productController');
 
 const router = express.Router();
@@ -67,10 +67,10 @@ const router = express.Router();
  *       500:
  *         description: Internal server error
  */
-router.get("/products", getProductsController);
-router.get("/products/:id", getProductByIdController);
-router.post("/products", createProductController);
-router.put("/products/:id", updateProductController);
-router.delete("/products/:id", deleteProductController);
+router.get('/products', getProductsController);
+router.get('/products/:id', getProductByIdController);
+router.post('/products', createProductController);
+router.put('/products/:id', updateProductController);
+router.delete('/products/:id', deleteProductController);
 
 module.exports = router;

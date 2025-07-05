@@ -9,10 +9,10 @@ const {
 
 const router = express.Router();
 
-router.get("/client_images", getClientImagesController);
-router.get("/client_images/:id", getClientImageByIdController);
-router.post("/client_images", createClientImageController);
-router.put("/client_images/:id", updateClientImageController);
-router.delete("/client_images/:id", deleteClientImageController);
+router.get('/client_images', getClientImagesController);
+router.get('/client_images/:id', getClientImageByIdController);
+router.post('/client_images', createClientImageController);
+router.put('/client_images/:id', updateClientImageController);
+router.delete('/client_images/:id', deleteClientImageController);
 
 module.exports = router;

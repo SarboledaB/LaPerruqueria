@@ -1,12 +1,12 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
   fetchProduct,
   fetchProductDetails,
   createProduct,
   updateProduct,
-  deleteProduct
-} = require("../../services/productService");
+  deleteProduct,
+} = require('../../services/productService');
 
 // Obtener todos los productos
 async function getProductsController(req, res, next) {
@@ -23,7 +23,7 @@ async function getProductByIdController(req, res, next) {
   try {
     const product = await fetchProductDetails(req.params.id);
     if (!product) {
-      return res.status(404).json({ message: "Producto no encontrado" });
+      return res.status(404).json({ message: 'Producto no encontrado' });
     }
     res.json(product);
   } catch (error) {
@@ -46,7 +46,7 @@ async function updateProductController(req, res, next) {
   try {
     const updatedProduct = await updateProduct(req.params.id, req.body);
     if (!updatedProduct) {
-      return res.status(404).json({ message: "Producto no encontrado" });
+      return res.status(404).json({ message: 'Producto no encontrado' });
     }
     res.json(updatedProduct);
   } catch (error) {
@@ -59,7 +59,7 @@ async function deleteProductController(req, res, next) {
   try {
     const deletedProduct = await deleteProduct(req.params.id);
     if (!deletedProduct) {
-      return res.status(404).json({ message: "Producto no encontrado" });
+      return res.status(404).json({ message: 'Producto no encontrado' });
     }
     res.json(deletedProduct);
   } catch (error) {
@@ -72,5 +72,5 @@ module.exports = {
   getProductByIdController,
   createProductController,
   updateProductController,
-  deleteProductController
+  deleteProductController,
 };

@@ -3,8 +3,8 @@ const {
   fetchClientImageDetails,
   createClientImage,
   updateClientImage,
-  deleteClientImage
-} = require("../../services/clientImagesService");
+  deleteClientImage,
+} = require('../../services/clientImagesService');
 
 // Obtener todas las imágenes de clientes
 async function getClientImagesController(req, res, next) {
@@ -21,7 +21,7 @@ async function getClientImageByIdController(req, res, next) {
   try {
     const image = await fetchClientImageDetails(req.params.id);
     if (!image) {
-      return res.status(404).json({ message: "Imagen no encontrada" });
+      return res.status(404).json({ message: 'Imagen no encontrada' });
     }
     res.json(image);
   } catch (error) {
@@ -44,7 +44,7 @@ async function updateClientImageController(req, res, next) {
   try {
     const updatedImage = await updateClientImage(req.params.id, req.body);
     if (!updatedImage) {
-      return res.status(404).json({ message: "Imagen no encontrada" });
+      return res.status(404).json({ message: 'Imagen no encontrada' });
     }
     res.json(updatedImage);
   } catch (error) {
@@ -57,7 +57,7 @@ async function deleteClientImageController(req, res, next) {
   try {
     const deletedImage = await deleteClientImage(req.params.id);
     if (!deletedImage) {
-      return res.status(404).json({ message: "Imagen no encontrada" });
+      return res.status(404).json({ message: 'Imagen no encontrada' });
     }
     res.json(deletedImage);
   } catch (error) {
@@ -70,5 +70,5 @@ module.exports = {
   getClientImageByIdController,
   createClientImageController,
   updateClientImageController,
-  deleteClientImageController
+  deleteClientImageController,
 };

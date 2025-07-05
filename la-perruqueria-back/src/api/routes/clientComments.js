@@ -9,10 +9,10 @@ const {
 
 const router = express.Router();
 
-router.get("/clients_comments", getCommentsController);
-router.get("/clients_comments/:id", getCommentByIdController);
-router.post("/clients_comments", createCommentController);
-router.put("/clients_comments/:id", updateCommentController);
-router.delete("/clients_comments/:id", deleteCommentController);
+router.get('/clients_comments', getCommentsController);
+router.get('/clients_comments/:id', getCommentByIdController);
+router.post('/clients_comments', createCommentController);
+router.put('/clients_comments/:id', updateCommentController);
+router.delete('/clients_comments/:id', deleteCommentController);
 
 module.exports = router;
