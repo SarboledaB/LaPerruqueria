@@ -1,7 +1,7 @@
 // services/albumService.js
 import axios from "axios";
 
-const API_URL = `https://la-perruqueria-back.vercel.app/api/client_images`;
+const API_URL = `${import.meta.env.VITE_API_URL}/client_images`;
 
 export const getPhotos = async () => {
   const response = await axios.get(API_URL);
