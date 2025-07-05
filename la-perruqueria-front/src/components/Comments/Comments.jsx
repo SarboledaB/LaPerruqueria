@@ -1,27 +1,46 @@
+import { useEffect, useState } from "react";
 import { PawPrint } from "lucide-react";
 import HeaderDivider from "../HeaderDivider/HeaderDivider.jsx";
+import { getComments } from "../../services/commentsService";
 import "./Comments.scss";
 
-const comments = [
-  { id: 1, name: "Juan Pérez", rating: 5, text: "Excelente calidad y servicio." },
-  { id: 2, name: "María López", rating: 4, text: "Muy buen producto, aunque un poco caro." },
-  { id: 3, name: "Carlos Gómez", rating: 3, text: "El producto es bueno, pero tardó en llegar." },
-  { id: 4, name: "Ana Rodríguez", rating: 5, text: "Mi mascota está feliz con su nueva cama!" },
-  { id: 5, name: "Pedro Jiménez", rating: 4, text: "Atención rápida y eficiente." },
-  { id: 6, name: "Laura Fernández", rating: 5, text: "Volveré a comprar sin duda!" },
-];
-
 const Comments = () => {
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const data = await getComments();
+        setComments(data);
+      } catch (err) {
+        setError("Error al cargar los comentarios.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchComments();
+  }, []);
+
+  if (loading) return <p>Cargando comentarios...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div className="comments-container">
       <HeaderDivider title="Testimonios con Huellitas " />
       <div className="comments-grid">
         {comments.map((comment) => (
           <div key={comment.id} className="comment-card">
-            <h3 className="comment-author">{comment.name}</h3>
+            <h3 className="comment-author">{comment.user_name}</h3>
             <div className="comment-stars">
               {[...Array(5)].map((_, index) => (
-                <PawPrint key={index} size={16} fill={index < comment.rating ? "#ff5757" : "none"} />
+                <PawPrint
+                  key={index}
+                  size={16}
+                  fill={index < comment.rating ? "#ff5757" : "none"}
+                />
               ))}
             </div>
             <p className="comment-text">{comment.text}</p>

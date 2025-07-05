@@ -2,23 +2,26 @@ import React from 'react';
 import './Cards.scss';
 import HeaderDivider from '../HeaderDivider/HeaderDivider.jsx';
 import { useNavigate } from 'react-router-dom';
+import SPA from '../../assets/SPA.png';
+import PETSHOP from '../../assets/PETSHOP.jpg';
+import CONCENTRADOS from '../../assets/CONCENTRADOS.jpg';
 
 const Cards = () => {
   const navigate = useNavigate();
 
   const cardsData = [
     {
-      image: 'https://petpix.co/wp-content/uploads/2020/05/Zeus-Suberiano0038-300x300.jpg',
+      image: SPA,
       title: 'SPA Y MIMOS',
       url: '/spa-de-mascotas'
     },
     {
-      image: 'https://petpix.co/wp-content/uploads/ZAT8363.jpg',
+      image: PETSHOP,
       title: 'PETSHOP',
       url: '/petshop'
     },
     {
-      image: 'https://petpix.co/wp-content/uploads/DSC08201-scaled.jpg',
+      image: CONCENTRADOS,
       title: 'CONCENTRADOS Y ALIMENTOS',
       url: '/concentrados-y-alimentos'
     },

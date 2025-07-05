@@ -15,7 +15,7 @@ const CustomFooter = () => {
           <FaFacebook />
         </a>
       </div>
-      <p className="copyright">© {new Date().getFullYear()} <a href="https://www.laperruqueria.com">www.laperruqueria.com</a>. Todos los derechos reservados.</p>
+      <p className="copyright">© {new Date().getFullYear()} <a href="https://laperrukeriapets.com/">laperrukeriapets.com</a> Todos los derechos reservados.</p>
     </footer>
   );
 };

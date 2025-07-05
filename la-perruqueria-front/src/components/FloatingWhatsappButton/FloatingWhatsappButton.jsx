@@ -1,8 +1,9 @@
 import React from "react";
 import "./FloatingWhatsappButton.scss"; // Archivo SCSS para los estilos
 
-const FloatingWhatsappButton = ({ phoneNumber }) => {
-  const whatsappLink = `https://wa.me/${phoneNumber}`;
+const FloatingWhatsappButton = () => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
     <a

@@ -1,3 +1,5 @@
+@use "../../styles/variables";
+
 .comments-container {
   padding: 0 1rem;
 
@@ -32,7 +34,7 @@
   .comment-stars {
     display: flex;
     gap: 0.25rem;
-    color: #ff5757;
+    color: variables.$primary-color;
   }
 
   .comment-text {

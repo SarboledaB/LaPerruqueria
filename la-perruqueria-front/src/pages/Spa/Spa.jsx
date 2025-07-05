@@ -3,66 +3,54 @@ import Banner from '../../components/Banner/Banner.jsx';
 
 const Spa = () => {
   return (
-    <div className="spa-container">
+    <div className="spa-page">
       <Banner />
-      <div className="spa-content">
-        <h1 className="title">Spa de Mascotas - Un Rato de Lujo para tu Peludo! </h1>
-        <p className="description">
-          Dale a tu mascota la experiencia de spa que se merece.
-          Nuestros servicios incluyen un baño de burbujas con shampoo hipoalergénico,
-          secado con estilo, pedicura de uñas, limpieza de orejitas y un masaje relajante .
-        </p>
-        <div className="pricing-table">
-          <table>
-            <thead>
-            <tr>
-              <th>Tamaño</th>
-              <th>Perro</th>
-              <th>Gato</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Pequeño</td>
-              <td>$45.000</td>
-              <td>$35.000</td>
-            </tr>
-            <tr>
-              <td>Mediano</td>
-              <td>$60.000</td>
-              <td>$40.000</td>
-            </tr>
-            <tr>
-              <td>Grande</td>
-              <td>$100.000</td>
-              <td>$45.000</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="photo-gallery">
-          <h2>¡Mira a nuestros clientes felices!</h2>
-          <div className="photos">
-            <img src="https://petpix.co/wp-content/uploads/Koda-Border-Collie00637-2.jpg"
-                 alt="Perro disfrutando del spa" />
-            <img src="https://petpix.co/wp-content/uploads/ZAT8379-scaled.jpg" alt="Gato relajado con masaje" />
-            <img src="https://petpix.co/wp-content/uploads/Diana-Ortiz-Gatos01212-1.jpg"
-                 alt="Baño de espuma y diversión" />
+      <section className="spa-container">
+        <section className="spa-intro">
+          <h1 className="spa-title">Un Día de Lujo para tu Mascota</h1>
+          <p className="spa-subtitle">
+            Ofrecemos una experiencia de spa completa para que tu compañero se sienta renovado, feliz y saludable. Descubre nuestros servicios.
+          </p>
+        </section>
+
+        <section className="spa-services">
+          <h2 className="section-heading">Nuestros Servicios de Spa</h2>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3 className="service-name">Baño y Secado Profesional</h3>
+              <p className="service-price">Desde $35.000</p>
+              <p className="service-description">Incluye baño con shampoo hipoalergénico, secado a mano y cepillado para un pelaje brillante.</p>
+            </div>
+            <div className="service-card">
+              <h3 className="service-name">Corte y Estilo</h3>
+              <p className="service-price">Desde $45.000</p>
+              <p className="service-description">Corte de raza o personalizado, realizado por nuestros estilistas expertos para un look perfecto.</p>
+            </div>
+            <div className="service-card">
+              <h3 className="service-name">Paquete Spa de Lujo</h3>
+              <p className="service-price">Desde $100.000</p>
+              <p className="service-description">La experiencia completa: baño, corte, pedicura, limpieza de oídos y un masaje relajante final.</p>
+            </div>
           </div>
-        </div>
-        <div className="booking">
-          <a
-            href="https://wa.me/1234567890"
-            className="page-whatsapp-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                 className="page-whatsapp-icon" />
-            ¡Reserva tu cita ahora!
+        </section>
+
+        <section className="spa-gallery">
+          <h2 className="section-heading">Clientes Felices</h2>
+          <div className="gallery-grid">
+            <img src="https://petpix.co/wp-content/uploads/Koda-Border-Collie00637-2.jpg" alt="Perro feliz después de su baño" />
+            <img src="https://petpix.co/wp-content/uploads/ZAT8379-scaled.jpg" alt="Gato relajado durante su masaje" />
+            <img src="https://petpix.co/wp-content/uploads/Diana-Ortiz-Gatos01212-1.jpg" alt="Mascota disfrutando de un baño de espuma" />
+          </div>
+        </section>
+
+        <section className="spa-booking">
+          <h2 className="section-heading">¿Listo para Consentirlos?</h2>
+          <p className="booking-text">Contáctanos y agenda una cita. ¡Tu mascota te lo agradecerá!</p>
+          <a href="https://wa.me/1234567890" className="cta-button" target="_blank" rel="noopener noreferrer">
+            Reservar Cita por WhatsApp
           </a>
-        </div>
-      </div>
+        </section>
+      </section>
     </div>
   );
 };

@@ -1,53 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PetShop.scss";
 import ProductList from '../../components/ProductList/ProductList.jsx';
 import Banner from '../../components/Banner/Banner.jsx';
-
-const products = [
-  {
-    id: 1,
-    name: "Collar para perro raza grande",
-    price: "$15.000",
-    image: "https://www.obipets.co/cdn/shop/files/COLLARCLOEGRANATE1.0_2048x.jpg?v=1701277058",
-  },
-  {
-    id: 2,
-    name: "Juguete para gato",
-    price: "$18.500",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQikPq3CAcktbIhNP1v824wLyQRyo5yEDeWCQ&s",
-  },
-  {
-    id: 3,
-    name: "Cama para perro",
-    price: "$25.000",
-    image: "https://virtualmuebles.com/cdn/shop/files/71g_X2Sbf2L._AC_SL1500_3e28fc46-41a4-4dc4-a869-546bd27d89f0.jpg?v=1739593427",
-  }
-];
+import { getProducts } from "../../services/productsService";
 
 const PetShop = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts('petshop');
+        setProducts(data);
+      } catch (err) {
+        setError("Error al cargar los productos.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) return <p>Cargando productos...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
-    <div className="petshopContainer">
+    <div className="petshop-container">
       <Banner />
-      <section className="pet-store-products">
-        <h2 className="pet-store-title">🐾 ¡Dale a tu mascota el estilo y comodidad que merece! 🐾</h2>
-        <p className="pet-store-description">
-          Descubre nuestra increíble selección de <strong>collares elegantes</strong>,
-          <strong>camas acogedoras</strong> y <strong>juguetes divertidísimos</strong>.
-          ¡Tu mejor amigo peludo merece lo mejor!
+      <section className="petshop-intro-section">
+        <h2 className="petshop-section-title">Estilo y Comodidad para tu Mascota</h2>
+        <p className="petshop-section-description">
+          Encuentra los mejores accesorios para tu compañero. Desde collares y camas hasta juguetes, todo para su bienestar.
         </p>
-        <div className="booking">
+        <div className="petshop-cta">
           <a
             href="https://wa.me/1234567890"
-            className="page-whatsapp-button"
+            className="cta-button"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                 className="page-whatsapp-icon" />
-            ¡Haz tu pedido aqui!
+            Realizar Pedido por WhatsApp
           </a>
         </div>
-      <ProductList products={products} />
+        <ProductList products={products} />
       </section>
     </div>
   );

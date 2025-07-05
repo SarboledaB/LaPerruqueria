@@ -1,25 +1,37 @@
 import './Album.scss';
 import ImageCarousel from '../ImageCarousel/ImageCarousel.jsx';
 import HeaderDivider from '../HeaderDivider/HeaderDivider.jsx';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getPhotos } from '../../services/albumService';
 const Album = () => {
-
-  const handleDragStart = (e) => e.preventDefault();
-
-  const images = [
-    'https://petpix.co/wp-content/uploads/Koda-Border-Collie00637-2.jpg',
-    'https://petpix.co/wp-content/uploads/3-Chow-Chow00802_2-1.jpg',
-    'https://petpix.co/wp-content/uploads/ZAT8379-scaled.jpg',
-    'https://petpix.co/wp-content/uploads/PET4029-1.jpg',
-    'https://petpix.co/wp-content/uploads/Milo-Border-Collie-10996-1.jpg',
-    'https://petpix.co/wp-content/uploads/Diana-Ortiz-Gatos01212-1.jpg'
-  ]
+    const [photos, setPhotos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      const fetchPhotos = async () => {
+        try {
+          const data = await getPhotos();
+          setPhotos(data);
+        } catch (err) {
+          setError("Error al cargar las fotos.");
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchPhotos();
+    }, []);
+  
+    if (loading) return <p>Cargando fotos...</p>;
+    if (error) return <p>{error}</p>;
+  
 
 
   return (
     <div>
       <HeaderDivider title={'Modelos con Patas y Mucho Estilo '} />
-      {<ImageCarousel images={images} />}
+      {<ImageCarousel images={photos} />}
     </div>
   );
 };
