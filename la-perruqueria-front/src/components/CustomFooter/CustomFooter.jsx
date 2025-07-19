@@ -5,13 +5,13 @@ const CustomFooter = () => {
   return (
     <footer className="footer-container">
       <div className="social-icons">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/laperrukeria.pets/#" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
-        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@laperrukeria.pets" target="_blank" rel="noopener noreferrer">
           <FaTiktok />
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/laperrukeria.pets" target="_blank" rel="noopener noreferrer">
           <FaFacebook />
         </a>
       </div>

@@ -7,6 +7,64 @@
     grid-auto-rows: min-content;
   }
 
+  .add-comment-btn {
+    margin: 1rem 0 1rem 80%;
+    padding: 0.5rem 1.5rem;
+    background: rgb(255, 87, 87);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 20%;
+  }
+
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 2rem;
+    align-items: center;
+  
+    button {
+      padding: 0.5rem 1.3rem;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(90deg,#ff5757 60%,#ff7b7b 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255,87,87,0.08);
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+      outline: none;
+    }
+    button:disabled {
+      background: #f3f3f3;
+      color: #bbb;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    button:not(:disabled):hover {
+      background: #e04c4c;
+      color: #fff;
+      box-shadow: 0 2px 14px rgba(255,87,87,0.13);
+    }
+    span {
+      background: #fff0f0;
+      color: #ff5757;
+      font-size: 1.08rem;
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 0.4rem 1.2rem;
+      border: 1.5px solid #ff5757;
+      box-shadow: 0 1px 4px rgba(255,87,87,0.06);
+      letter-spacing: 0.5px;
+    }
+  }
+  
+
   .pet-tip-card {
     border: 1px solid #ddd;
     padding: 1rem;

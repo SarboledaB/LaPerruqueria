@@ -32,7 +32,7 @@ async function getClientImageByIdController(req, res, next) {
 // Crear una imagen de cliente
 async function createClientImageController(req, res, next) {
   try {
-    const newImage = await createClientImage(req.body);
+    const newImage = await createClientImage({...req.body, likes: 0});
     res.status(201).json(newImage);
   } catch (error) {
     next(error);

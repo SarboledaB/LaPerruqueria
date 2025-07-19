@@ -12,9 +12,6 @@
 
   .welcome-modal-content {
     position: relative;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
     max-width: 80%;
     max-height: 80%;
 
@@ -24,6 +21,7 @@
       display: block;
       max-width: 80vw;
       max-height: 80vh;
+      border-radius: 8px;
     }
 
     .close-button {
