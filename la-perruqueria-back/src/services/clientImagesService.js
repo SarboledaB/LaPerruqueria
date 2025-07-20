@@ -6,6 +6,8 @@ const {
   setDoc,
   updateDoc,
   deleteDoc,
+  query,
+  where,
 } = require('firebase/firestore');
 const { db } = require('../config/firebase');
 const crypto = require('crypto');
@@ -18,7 +20,11 @@ function isValidUUID(uuid) {
 }
 
 async function fetchClientImages() {
-  const snapshot = await getDocs(imagesCollection);
+    const q = query(
+      imagesCollection,
+      where('status', '!=', 'pending')
+    );
+  const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 }
 
@@ -38,8 +44,8 @@ async function createClientImage(imageData) {
     throw new Error('ID inválido: debe ser un UUID válido');
   }
   const imageRef = doc(db, 'client_images', id);
-  await setDoc(imageRef, { ...imageData, id });
-  return { ...imageData, id };
+  await setDoc(imageRef, { ...imageData, id, status: 'pending' });
+  return { ...imageData, id, status: 'pending' };
 }
 
 async function updateClientImage(id, imageData) {

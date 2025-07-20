@@ -41,6 +41,15 @@ const ProductCard = ({ product }) => {
             ))}
           </div>
         )} */}
+        <a
+          className="productCard__whatsappBtn"
+          href={`https://wa.me/573233041810?text=${encodeURIComponent(`Hola, estoy interesado en el producto ${product.name}`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Comprar ${product.name} por WhatsApp`}
+        >
+          Comprar por WhatsApp
+        </a>
       </div>
     </div>
   );

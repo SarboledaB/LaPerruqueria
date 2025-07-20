@@ -19,7 +19,11 @@ function isValidUUID(uuid) {
 }
 
 async function fetchComments(type) {
-  const q = query(commentsCollection, where('type', '==', type));
+  const q = query(
+    commentsCollection,
+    where('type', '==', type),
+    where('status', '!=', 'pending')
+  );
   const snapshot = await getDocs(q);
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 }
@@ -41,8 +45,8 @@ async function createComment(commentData) {
   }
 
   const commentRef = doc(db, 'clients_comments', id);
-  await setDoc(commentRef, { ...commentData, id });
-  return { ...commentData, id };
+  await setDoc(commentRef, { ...commentData, id, status: 'pending' });
+  return { ...commentData, id, status: 'pending' };
 }
 
 async function updateComment(id, commentData) {

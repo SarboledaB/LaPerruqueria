@@ -15,6 +15,6 @@ export const updatePhotoLikes = async (id, likes) => {
 
 export const addPhoto = async (photo) => {
   // photo debe ser un objeto con al menos { url }
-  const response = await axios.post(API_URL, photo);
+  const response = await axios.post(API_URL,{url: photo});
   return response.data;
 };

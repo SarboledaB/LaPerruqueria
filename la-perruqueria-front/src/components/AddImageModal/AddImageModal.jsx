@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AddImageModal.scss";
+import { addPhoto } from "../../services/albumService";
 
 const AddImageModal = ({ isOpen, onClose, onSubmit }) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -14,7 +15,8 @@ const AddImageModal = ({ isOpen, onClose, onSubmit }) => {
     setError(null);
     try {
       if (!imageUrl) throw new Error("La URL de la imagen es requerida");
-      await onSubmit(imageUrl);
+      await addPhoto(imageUrl);
+      onSubmit(imageUrl);
       setImageUrl("");
       onClose();
     } catch (err) {

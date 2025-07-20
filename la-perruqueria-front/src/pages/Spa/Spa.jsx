@@ -46,7 +46,7 @@ const Spa = () => {
         <section className="spa-booking">
           <h2 className="section-heading">¿Listo para Consentirlos?</h2>
           <p className="booking-text">Contáctanos y agenda una cita. ¡Tu mascota te lo agradecerá!</p>
-          <a href="https://wa.me/1234567890" className="cta-button" target="_blank" rel="noopener noreferrer">
+          <a href={`https://wa.me/573233041810?text=${encodeURIComponent(`Hola, estoy interesad@ en reservar una cita de spa para mi peludo`)}`} className="cta-button" target="_blank" rel="noopener noreferrer">
             Reservar Cita por WhatsApp
           </a>
         </section>

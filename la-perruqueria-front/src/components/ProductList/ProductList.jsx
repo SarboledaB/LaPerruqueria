@@ -53,32 +53,21 @@ const ProductList = ({ products }) => {
             )}
           </div>
           {totalPages > 1 && (
-            <div className="pagination">
+            <div className="pagination-controls">
               <button
-                className="pagination__btn"
                 onClick={() => handlePageChange(page - 1)}
                 disabled={page === 1}
-                aria-label="Página anterior"
               >
-                &lt;
+                Anterior
               </button>
-              {Array.from({ length: totalPages }).map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`pagination__btn${page === idx + 1 ? " active" : ""}`}
-                  onClick={() => handlePageChange(idx + 1)}
-                  aria-label={`Ir a la página ${idx + 1}`}
-                >
-                  {idx + 1}
-                </button>
-              ))}
+              <span>
+                {page} / {totalPages}
+              </span>
               <button
-                className="pagination__btn"
                 onClick={() => handlePageChange(page + 1)}
                 disabled={page === totalPages}
-                aria-label="Página siguiente"
               >
-                &gt;
+                Siguiente
               </button>
             </div>
           )}

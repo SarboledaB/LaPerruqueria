@@ -37,7 +37,7 @@ const PetShop = () => {
         </p>
         <div className="petshop-cta">
           <a
-            href="https://wa.me/1234567890"
+            href={`https://wa.me/573233041810?text=${encodeURIComponent(`Hola, estoy interesad@ en algunos productos para mi peludo`)}`}
             className="cta-button"
             target="_blank"
             rel="noopener noreferrer"
