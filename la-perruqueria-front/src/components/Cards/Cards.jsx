@@ -3,8 +3,8 @@ import './Cards.scss';
 import HeaderDivider from '../HeaderDivider/HeaderDivider.jsx';
 import { useNavigate } from 'react-router-dom';
 import SPA from '../../assets/SPA.png';
-import PETSHOP from '../../assets/PETSHOP.jpg';
-import CONCENTRADOS from '../../assets/CONCENTRADOS.jpg';
+import PETSHOP from '../../assets/PETSHOP.webp';
+import CONCENTRADOS from '../../assets/CONCENTRADOS.webp';
 
 const Cards = () => {
   const navigate = useNavigate();

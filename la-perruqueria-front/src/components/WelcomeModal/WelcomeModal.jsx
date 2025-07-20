@@ -1,6 +1,6 @@
 import React from 'react';
 
-import welcomeImage from '../../assets/welcome.jpg';
+import welcomeImage from '../../assets/welcome.webp';
 import './WelcomeModal.scss';
 
 const WelcomeModal = ({ onClose }) => {

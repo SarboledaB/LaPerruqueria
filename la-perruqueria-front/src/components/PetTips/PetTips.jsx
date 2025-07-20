@@ -74,7 +74,7 @@ const PetTips = () => {
             Anterior
           </button>
           <span>
-            Página {currentPage} de {totalPages}
+            {currentPage} / {totalPages}
           </span>
           <button
             onClick={handleNext}
