@@ -2,6 +2,7 @@ import React from "react";
 import "./ProductList.scss";
 
 const ProductCard = ({ product }) => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
   // Etiquetas destacadas
   const labels = [];
   if (product.isNew) labels.push("Nuevo");
@@ -45,7 +46,7 @@ const ProductCard = ({ product }) => {
         )} */}
         <a
           className="productCard__whatsappBtn"
-          href={`https://wa.me/573233041810?text=${encodeURIComponent(`Hola, estoy interesado en el producto ${product.name}`)}`}
+          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hola, estoy interesado en el producto ${product.name}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Comprar ${product.name} por WhatsApp`}

@@ -19,8 +19,7 @@
 
 .spa-intro {
   text-align: center;
-  padding: 40px 20px;
-  margin-bottom: 40px;
+  padding: 0 20px;
 
   .spa-title {
     font-size: 2.8rem;
@@ -36,6 +35,50 @@
     margin: 0 auto;
     line-height: 1.6;
   }
+}
+
+.spa-table-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  background: #fffbe6;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 32px 18px 24px 18px;
+  border: 1.5px solid #ffe066;
+}
+
+.spa-table-note {
+  background: #fff3cd;
+  color: #856404;
+  font-size: 1.08rem;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border-left: 5px solid #ffe066;
+}
+
+.spa-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 1.08rem;
+}
+.spa-price-table th, .spa-price-table td {
+  border: 1px solid #ffe066;
+  padding: 14px 10px;
+  text-align: left;
+}
+.spa-price-table th {
+  background: #ffe066;
+  color: #343a40;
+  font-size: 1.12rem;
+}
+.spa-price-table tr:nth-child(even) {
+  background: #fffde7;
+}
+.spa-price-table tr:hover {
+  background: #fff9c4;
+  transition: background 0.2s;
 }
 
 .services-grid {
@@ -90,6 +133,7 @@
 
     img {
       width: 100%;
+      max-width: 300px;
       height: 280px;
       object-fit: cover;
       border-radius: 8px;

@@ -8,6 +8,7 @@ const Food = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -37,7 +38,7 @@ const Food = () => {
         </p>
         <div className="food-cta">
           <a
-            href={`https://wa.me/573233041810?text=${encodeURIComponent(`Hola, estoy interesad@ en algunos productos para mi peludo`)}`}
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hola, estoy interesad@ en algunos productos para mi peludo`)}`}
             className="cta-button"
             target="_blank"
             rel="noopener noreferrer"
