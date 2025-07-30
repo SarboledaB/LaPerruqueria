@@ -11,9 +11,9 @@ const CustomFooter = () => {
         <a href="https://www.tiktok.com/@laperrukeria.pets" target="_blank" rel="noopener noreferrer">
           <FaTiktok />
         </a>
-        <a href="https://www.facebook.com/laperrukeria.pets" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://www.facebook.com/laperrukeria.pets" target="_blank" rel="noopener noreferrer">
           <FaFacebook />
-        </a>
+        </a> */}
       </div>
       <p className="copyright">© {new Date().getFullYear()} <a href="https://laperrukeriapets.com/">laperrukeriapets.com</a> Todos los derechos reservados.</p>
     </footer>

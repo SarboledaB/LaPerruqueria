@@ -21,12 +21,12 @@ const ImageCarousel = ({ images: initialImages }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <button
+      {/* <button
         className="add-comment-btn"
         onClick={() => setModalOpen(true)}
       >
         Agregar imagen
-      </button>
+      </button> */}
       <AddImageModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

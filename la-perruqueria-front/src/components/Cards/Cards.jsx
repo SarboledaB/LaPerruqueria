@@ -12,12 +12,12 @@ const Cards = () => {
   const cardsData = [
     {
       image: SPA,
-      title: 'SPA Y MIMOS',
+      title: 'BAÑOS Y MIMOS',
       url: '/spa-de-mascotas'
     },
     {
       image: PETSHOP,
-      title: 'PETSHOP',
+      title: 'JUGUETES Y ACCESORIOS',
       url: '/petshop'
     },
     {
